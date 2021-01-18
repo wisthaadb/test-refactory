@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     backgroundColor: '#cfe8fc',
+    height: "100%",
   },
   grid: {
     width: '100vw',
@@ -35,7 +36,9 @@ export default function CenteredGrid() {
           </Paper>
         </Grid>
         <Grid item xs={7}>
-          <Paper className={classes.paper}>xs=6</Paper>
+          <Paper className={classes.paper}>
+            
+          </Paper>
         </Grid>
       </Grid>
     </div>

@@ -6,13 +6,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { borders } from '@material-ui/system';
 import DescriptionIcon from '@material-ui/icons/Description';
+import MyCalendar from './Calendar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    margin: "10 12",
     borderRadius:"10%",
     backgroundColor:"#0442D0",
+    marginTop:'7em'
     
     
   },
@@ -62,6 +63,10 @@ export default function MediaControlCard() {
           You have 2 tasks left for today, Already completed Task today?
           </Typography>
           </div>
+        </CardContent>
+
+        <CardContent  className={classes.content} >
+          <MyCalendar/>
         </CardContent>
     </Card>
   );
