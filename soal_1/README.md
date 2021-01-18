@@ -1,3 +1,10 @@
+Note 
+- Menggunakan ReactJS
+- printDotMatrix.js berisi fungsi untuk semua inputan yang diperlukan
+- printResult.js berisi fungsi untuk menampilkan output/ hasil print
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

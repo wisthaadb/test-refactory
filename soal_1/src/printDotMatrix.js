@@ -14,42 +14,40 @@ export default function PrintDotMatrix(props) {
 
 
     console.log(listProduk)
-  
+    
+    // fungsi onchange input produk
     const handleChangeProduk = (i, e) => {
         const produk = [...listProduk];
         produk[i].produk = e.target.value;
         setProduk(produk);
       }
-
+   // fungsi onchange input harga
     const handleChangeHarga = (i, e) => {
         const _listProduk = [...listProduk];
         _listProduk[i].harga = e.target.value;
         setProduk(_listProduk);
       }
-
+    // menambah list produk
     const handleAdd = () => {
         const _listProduk = [...listProduk];
         _listProduk.push({ nama: '', kota: '' });
         setProduk(_listProduk);
       }
-
+    //   menghapus list produk
     const handleRemove = (i) => {
         const _listProduk = [...listProduk];
         _listProduk.splice(i, 1);
         setProduk(_listProduk);
       }
 
-    const handleSubmit = () => {
-        console.log(listProduk)
-      }
-
     return (
       <div>
+          {/* input nama warung */}
         <form>
             <TextField id="standard-basic" label="Nama Warung" onChange={(e) => setWarung(e.target.value)}
             />
         </form>
-
+        {/* input tanggal */}
         <FormGroup>
             <Label for="exampleDate" style={{margin:'2em'}}>Date</Label>
             <Input
@@ -60,6 +58,7 @@ export default function PrintDotMatrix(props) {
                 onChange={(e) => setTanggal(e.target.value)}
             />
       </FormGroup>
+      {/* input jam */}
       <FormGroup>
             <Label for="exampleTime" style={{margin:'2em'}}>Time</Label>
             <Input
@@ -69,11 +68,12 @@ export default function PrintDotMatrix(props) {
                 placeholder="time placeholder"
                 onChange={(e) => setJam(e.target.value)}
             />
+        {/* input nama kasir */}
       </FormGroup>
         <form>
             <TextField id="standard-basic" label="Nama Kasir" onChange={(e) => setKasir(e.target.value)}/>
         </form>
-
+        {/* input nama produk dan harga */}
         {listProduk.map((field, i) => {
             return (
                 <div className="form-input-wrapper" key={i} style={{margin:'1em'}}>
@@ -93,20 +93,22 @@ export default function PrintDotMatrix(props) {
                     label={field.harga}
                     onChange={e => handleChangeHarga(i, e)}
                 />
+                {/* button untuk menghapus produk */}
                 <button type="button" onClick={() => handleRemove(i)} className="btn-remove">x</button>
                 </div>
             )
             })}
+        {/* button untuk menambah produk */}
         <div className="btn-wrapper">
         <button type="button" onClick={handleAdd} className="btn-add">+</button>
         </div>
 
         <div>
             <h1>Hasil</h1>
-            {/* <p>{selectedDate}</p> */}
         </div>
 
         <div>
+            {/* memanggil component penghasil output */}
             <PrintResult 
             namaWarung={namaWarung} 
             tanggal={tanggal} 
